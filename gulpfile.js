@@ -16,7 +16,9 @@ gulp.task('scss', function(){
   return gulp.src('app/scss/**/*.scss')
     .pipe(sass({outputStyle: 'compressed'}))
     .pipe(autoprefixer({
-      browsers: ['last 8 versions']
+      // browsers: ['last 8 versions']
+      overrideBrowserslist:  ['last 2 versions'],
+      cascade: false
     }))
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('app/css'))
