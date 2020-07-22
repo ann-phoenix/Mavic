@@ -53,6 +53,7 @@ body {
 	background-position: top center;
 	background-size: cover;
 	position: relative;
+	overflow: hidden;
 	&::before {
 		content: '';
 		left: 0;
@@ -68,8 +69,6 @@ body {
 		z-index: 1;
 		min-height: 100vh;
 		padding: 74px 0 50px;
-
-
 	}
 }
 

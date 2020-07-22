@@ -215,48 +215,56 @@
 			margin-left: 45px;
 			transform: translateY(25px);
 		}
-	}
 
-	&__item-1,
-	&__item-3 {
-		position: relative;
+		&:nth-child(3) {
+			margin-left: 56px;
+		}
 
-		&::before,
-		&::after {
-			content: '';
-			position: absolute;
-			background-repeat: no-repeat;
-			background-position: 0 0;
+		// &:nth-child(4){
+		// margin-left: 60px;
+		// }
+		&:first-child,
+		&:nth-child(3) {
+			position: relative;
+
+			&::before,
+			&::after {
+				content: '';
+				position: absolute;
+				background-repeat: no-repeat;
+				background-position: 0 0;
+			}
+		}
+
+		&:first-child {
+			&::before {
+				height: 48px;
+				width: 245px;
+				background-image: url('../images/line-1.svg');
+				right: -56px;
+				top: 30px;
+			}
+		}
+
+		&:nth-child(3) {
+			&::before {
+				height: 62px;
+				width: 463px;
+				background-image: url('../images/line-2.svg');
+				right: -32px;
+				top: -70px;
+			}
+
+			&::after {
+				height: 49px;
+				width: 254px;
+				background-image: url('../images/line-3.svg');
+				right: -56px;
+				top: 60px;
+			}
 		}
 	}
 
-	&__item-1 {
-		&::before {
-			height: 48px;
-			width: 245px;
-			background-image: url('../images/line-1.svg');
-			right: -56px;
-			top: 30px;
-		}
-	}
-
-	&__item-3 {
-		&::before {
-			height: 62px;
-			width: 463px;
-			background-image: url('../images/line-2.svg');
-			right: -32px;
-			top: -70px;
-		}
-
-		&::after {
-			height: 49px;
-			width: 254px;
-			background-image: url('../images/line-3.svg');
-			right: -56px;
-			top: 60px;
-		}
-	}
 
 	&__num {
 		font-size: 36px;
@@ -297,9 +305,91 @@
 			line-height: 18px;
 		}
 	}
-
-
 }
 
 //end benefits
+//start specification
+.specification {
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-left: 30px;
+	}
+
+	&__item--center {
+		margin-right: -15px;
+		margin-left: -15px;
+
+	}
+
+	&__box {
+		width: 280px;
+		margin-top: 10px;
+		position: relative;
+
+		&::before {
+			content: '';
+			position: absolute;
+			background-repeat: no-repeat;
+			background-position: 0 0;
+			background-size: contain;
+		}
+
+		&-2 {
+			margin-top: 140px;
+		}
+
+		&-4 {
+			margin-top: 160px;
+		}
+
+		&-1::before {
+			background-image: url('../images/pointer-1.svg');
+			width: 229px;
+			height: 114px;
+			right: -185px;
+			top: 16px;
+		}
+
+		&-2::before {
+			background-image: url('../images/pointer-2.svg');
+			width: 346px;
+			height: 81px;
+			right: -300px;
+			top: -66px;
+		}
+
+		&-3::before {
+			background-image: url('../images/pointer-3.svg');
+			width: 258px;
+			height: 103px;
+			left: -288px;
+			top: 15px;
+		}
+
+		&-4::before {
+			background-image: url('../images/pointer-4.svg');
+			width: 124px;
+			height: 88px;
+			left: -141px;
+			top: -70px;
+		}
+
+		&-title {
+			font-size: 21px;
+			line-height: 28px;
+			@extend %ubuntu-bold;
+			margin-bottom: 10px;
+		}
+
+		&-text {
+			font-size: 15px;
+			line-height: 19px;
+			@extend %ubuntu-light;
+		}
+	}
+}
+
+//end specification
 @import "media";
